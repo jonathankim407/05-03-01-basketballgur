@@ -1,1 +1,6 @@
 <h1>Players</h1>
+
+<% @players.each do |player| %>
+  <p><%= player.name %>, <%= player.position %>, <%= player.college %></p>
+  <img src="<%= player.url %>" alt="<%= player.name %>">
+<% end %>
