@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'players#index'
   get 'players' => 'players#index'
 
   post 'players' => 'players#create'
