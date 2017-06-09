@@ -1,0 +1,27 @@
+<h1>Edit Player</h1>
+
+<p>
+  <%= link_to("Back", "/players/#{@player.id}") %>
+</p>
+
+<%= form_for(@player, url: "/players/#{@player.id}") do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </p>
+  <p>
+    <%= f.label :college %><br>
+    <%= f.text_field :college %>
+  </p>
+  <p>
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

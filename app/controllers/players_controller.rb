@@ -26,4 +26,19 @@ class PlayersController < ApplicationController
     { name: params[:player][:name], position: params[:player][:position], college: params[:player][:college], url: params[:player][:url] }
   end
 
+  def edit
+    @player = Player.find(params[:id])
+  end
+
+  def update
+    @player = Player.find(params[:id])
+
+    # use the same player_params method that we used in create
+    if @player.update_attributes(player_params)
+      redirect_to "/players/#{@player.id}"
+    else
+      render :edit
+    end
+  end
+
 end
