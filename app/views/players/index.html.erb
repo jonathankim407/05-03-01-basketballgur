@@ -1,6 +1,7 @@
-<h1>Players</h1>
+<h1>Players (<%= @players.length %>)</h1>
+<%= link_to("New Player", "/players/new") %>
 
 <% @players.each do |player| %>
   <p><%= player.name %>, <%= player.position %>, <%= player.college %></p>
-  <img src="<%= player.url %>" alt="<%= player.name %>">
+  <%= link_to(image_tag(player.url), "/players/#{player.id}") %>
 <% end %>
