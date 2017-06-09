@@ -1,4 +1,4 @@
-<%= link_to("Back to Players", "/players") %> | <%= link_to("Edit", "/players/#{@player.id}/edit") %>
+<%= link_to("Back to Players", "/players") %> | <%= link_to("Edit", "/players/#{@player.id}/edit") %> | <%= link_to("Delete", "/players/#{@player.id}", method: :delete, data: {confirm: "Are you sure you want to delete this player?"})  %>
 
 <p><%= @player.name %>, <%= @player.position %>, <%= @player.college %></p>
 <%= image_tag(@player.url) %>
